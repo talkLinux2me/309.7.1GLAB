@@ -1,8 +1,9 @@
 package com.example._971.model;
 
 import jakarta.persistence.*;
+import lombok.Setter;
 
-import javax.persistence.*;
+//import javax.persistence.*;
 @Entity
 @Table(name = "tutorials")
 public class Tutorial {
@@ -10,12 +11,15 @@ public class Tutorial {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    @Setter
     @Column(name = "title")
     private String title;
 
+    @Setter
     @Column(name = "description")
     private String description;
 
+    @Setter
     @Column(name = "published")
     private boolean published;
 
@@ -37,23 +41,12 @@ public class Tutorial {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
     public boolean isPublished() {
         return published;
-    }
-
-    public void setPublished(boolean isPublished) {
-        this.published = isPublished;
     }
 
     @Override
